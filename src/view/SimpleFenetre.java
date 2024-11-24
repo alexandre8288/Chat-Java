@@ -1,6 +1,8 @@
 package view;
-
+import java.awt.FlowLayout;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
 
 public class SimpleFenetre extends JFrame{
 
@@ -16,5 +18,17 @@ public class SimpleFenetre extends JFrame{
         setLocationRelativeTo(null); //On centre la fenêtre sur l'écran
         setResizable(false); //On interdit la redimensionnement de la fenêtre
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE); //On dit à l'application de se fermer lors du clic sur la croix
+        setContentPane(buildContentPane());
+    }
+
+    private JPanel buildContentPane(){
+        JPanel panel = new JPanel();
+        panel.setLayout(new FlowLayout());
+
+        JLabel label = new JLabel("appli de connard");
+
+        panel.add(label);
+
+        return panel;
     }
 }
